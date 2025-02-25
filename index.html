@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocab Quiz Hangman</title>
+    <style>
+        #gameContainer {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #rules {
+            text-align: left;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        #prompt {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        #guessInput {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #submitButton {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #submitButton:hover {
+            background-color: #45a049;
+        }
+        #feedback {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        #hp {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        #finalMessage {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        #playAgainButton {
+            display: none;
+            padding: 10px 20px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        #playAgainButton:hover {
+            background-color: #007B9A;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <h1>Vocab Quiz Hangman</h1>
+        <div id="rules">
+            <h2>Rules</h2>
+            <ul>
+                <li>You start with 100 HP (grade points).</li>
+                <li>Each wrong guess deducts 5 HP.</li>
+                <li>If you fail to guess a word in three tries, an additional 10 HP is deducted.</li>
+                <li>Switching tabs during the game deducts 50 HP (once per game).</li>
+                <li>The game has 20 levels, one for each vocab word.</li>
+                <li>Your final grade is your remaining HP after all levels.</li>
+            </ul>
+        </div>
+        <div id="levelInfo"></div>
+        <div id="prompt"></div>
+        <input type="text" id="guessInput" placeholder="Type your guess">
+        <button id="submitButton">Submit</button>
+        <div id="feedback"></div>
+        <div id="hp">Current HP: 100</div>
+        <div id="finalMessage"></div>
+        <button id="playAgainButton">Play Again</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
